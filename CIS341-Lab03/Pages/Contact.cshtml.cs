@@ -8,5 +8,20 @@ namespace CIS341_Lab03.Pages
         public void OnGet()
         {
         }
+
+        [BindProperty]
+        public ContactModel ContactForm { get; set; }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            System.Diagnostics.Debug.WriteLine(ContactForm.Message);
+
+            return RedirectToPage("./Index");
+        }
     }
 }
