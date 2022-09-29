@@ -2,8 +2,8 @@
 {
     public class Contact
     {
-        string Name { get; set; } = string.Empty;
-        string Email { get; set; } = string.Empty;
-        string Message { get; set; } = string.Empty;
+        string Name { get; set; }
+        string EmailAddress { get; set; }
+        string Message { get; set; }
     }
 }
