@@ -8,5 +8,12 @@ namespace CIS341_Lab03.Pages
         public void OnGet()
         {
         }
+        public void OnPost()
+        {
+            var name = Request.Form["name"];
+            var emailAddress = Request.Form["EmailAddress"];
+            var message = Request.Form["message"];
+            // do something with emailAddress
+        }
     }
 }
