@@ -1,13 +1,14 @@
 ﻿@page
-@model CIS341_Lab03.Pages.ContactModel
-@{
-    ViewData["Title"] = "Contact";
-}
-<h1>@ViewData["Title"]</h1>
+@model ContactModel
 
-<form method="post">
-    <input type="text" name="name">
-    <input asp-for="EmailAddress">
-    <input type="text" name="message">
-    <input type="submit">
+@{
+}
+
+<h1>Contact Us</h1>
+
+<form asp-page="Contact">
+    <input asp-for="Name" /><br />
+    <input asp-for="EmailAddress" /><br />
+    <input asp-for="Message" /><br />
+    <input type="submit" />
 </form>

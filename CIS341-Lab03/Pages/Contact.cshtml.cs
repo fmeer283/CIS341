@@ -8,12 +8,25 @@ namespace CIS341_Lab03.Pages
         public void OnGet()
         {
         }
-        public void OnPost()
+        //public void OnPost()
+        //{
+        //    var name = Request.Form["name"];
+        //    var emailAddress = Request.Form["EmailAddress"];
+        //    var message = Request.Form["message"];
+        //}
+        [BindProperty]
+        public ContactModel ContactForm { get; set; }
+
+        public IActionResult OnPost()
         {
-            var name = Request.Form["name"];
-            var emailAddress = Request.Form["EmailAddress"];
-            var message = Request.Form["message"];
-            // do something with emailAddress
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            System.Diagnostics.Debug.WriteLine(ContactForm.Message);
+
+            return RedirectToPage("./Index");
         }
     }
 }
