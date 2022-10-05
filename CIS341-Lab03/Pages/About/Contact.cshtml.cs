@@ -10,6 +10,7 @@ namespace CIS341_Lab03.Pages
         public string? Name { get; set; }
         public string? Email { get; set; }
         public string? Message { get; set; }
+
         public void OnGet()
         {
         }
@@ -17,7 +18,7 @@ namespace CIS341_Lab03.Pages
         public IActionResult OnPost()
         {
             Debug.WriteLine($"{Name} ({Email}): {Message}");
-            return RedirectToPage("Index");
+            return RedirectToPage("/About/Thanks");
         }
     }
 }
