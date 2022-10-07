@@ -1,0 +1,16 @@
+﻿@page "{statusCode:int}"
+@model CIS341_Lab03.Pages.StatusCodeModel
+
+@{
+
+}
+@if (@Model.OriginalStatusCode == 404)
+{
+    <p>
+        <strong>The requested page could not be found.</strong>
+    </p>
+}else{
+    <p>
+        <strong>Status Code: @Model.OriginalStatusCode</strong>
+    </p>
+}
