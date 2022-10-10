@@ -42,6 +42,6 @@ public class StatusCodeModel : PageModel
             $"{DateTime.UtcNow.ToLongTimeString()}" +
             $" with code:{OriginalStatusCode}");
         _logger.LogError($"{OriginalPathAndQuery}");
-        //_logger.LogError($"{HttpContext.Features.Get<>}");
+        _logger.LogError($"{HttpContext.Features.Get<>}");
     }
 }
