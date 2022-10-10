@@ -32,16 +32,10 @@ public class StatusCodeModel : PageModel
                 statusCodeReExecuteFeature.OriginalPath,
                 statusCodeReExecuteFeature.OriginalQueryString);
         }
-        /*
-         * Log relevant information about the error using the 
-         * conceptually appropriate Log* method in the Logger interface. 
-         * Include at least the client's user agent information, the 
-         * requested URL, and the HTTP status code. – 1 point
-        */
         _logger.LogError($"StatusCode page hit at " +
             $"{DateTime.UtcNow.ToLongTimeString()}" +
             $" with code:{OriginalStatusCode}");
         _logger.LogError($"{OriginalPathAndQuery}");
-        _logger.LogError($"{HttpContext.Features.Get<>}");
+        _logger.LogError($"{HttpContext.Request.Headers.UserAgent}");
     }
 }
