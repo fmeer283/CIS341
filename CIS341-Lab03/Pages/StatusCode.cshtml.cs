@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CIS341_Lab03.Pages;
 
-// <snippet_Class>
 [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 public class StatusCodeModel : PageModel
 {
